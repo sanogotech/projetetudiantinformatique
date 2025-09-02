@@ -365,7 +365,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="card h-100">
-              <div class="card-header d-flex align-items-center">
+              <div class="align-items-center">
                 <i class="bi bi-list-check me-2"></i>
                 <h5 class="mb-0">Répartition par phase</h5>
               </div>
@@ -398,7 +398,7 @@
           
           <div class="col-md-6">
             <div class="card h-100">
-              <div class="card-header d-flex align-items-center">
+              <div class=" align-items-center">
                 <i class="bi bi-pie-chart me-2"></i>
                 <h5 class="mb-0">Répartition graphique</h5>
               </div>
@@ -789,7 +789,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="card mb-4">
-            <div class="card-header">
+            <div>
               <h5 class="mb-0">Outils recommandés</h5>
             </div>
             <div class="card-body">
@@ -821,7 +821,7 @@
         
         <div class="col-md-6">
           <div class="card mb-4">
-            <div class="card-header">
+            <div >
               <h5 class="mb-0">Documentation utile</h5>
             </div>
             <div class="card-body">
@@ -1035,6 +1035,258 @@
             </ul>
           `;
           break;
+		  
+		  
+		          case 'web1':
+          title = "Application de gestion d'événements sportifs";
+          content = `
+            <h6>Objectif complet :</h6>
+            <p>Plateforme web et mobile pour inscrire des équipes, gérer les matchs, scores, et classements.</p>
+
+            <h6>Technologies utilisées :</h6>
+            <ul>
+              <li>Flutter</li>
+              <li>Firebase</li>
+              <li>Node.js</li>
+              <li>MongoDB</li>
+            </ul>
+
+            <h6>Détails supplémentaires :</h6>
+            <ul>
+              <li>Authentification par rôle : admin, organisateur, participant</li>
+              <li>Interface mobile-first et responsive</li>
+              <li>Génération dynamique de tournois</li>
+              <li>Export CSV des résultats et dashboard admin</li>
+            </ul>
+
+            <h6>Livrables attendus :</h6>
+            <ul>
+              <li>Base de données MongoDB structurée</li>
+              <li>API Node.js documentée</li>
+              <li>Application Flutter fonctionnelle</li>
+              <li>Rapport technique et manuel utilisateur</li>
+            </ul>
+          `;
+          break;
+
+        case 'web2':
+          title = "Plateforme d'offres d'emploi pour freelances";
+          content = `
+            <h6>Objectif complet :</h6>
+            <p>Développement d'un site où freelances peuvent créer un profil, postuler et suivre les missions.</p>
+
+            <h6>Technologies utilisées :</h6>
+            <ul>
+              <li>Vue.js</li>
+              <li>Express.js</li>
+              <li>MySQL</li>
+              <li>REST API</li>
+            </ul>
+
+            <h6>Détails supplémentaires :</h6>
+            <ul>
+              <li>Création de profils avec CV PDF dynamiques</li>
+              <li>Matching automatique entre profils et offres</li>
+              <li>Tableau de bord pour suivi de candidatures</li>
+              <li>Chat simple recruteur ↔ freelance</li>
+            </ul>
+
+            <h6>Livrables attendus :</h6>
+            <ul>
+              <li>Modèle de données MySQL</li>
+              <li>API REST opérationnelle</li>
+              <li>Interface Vue.js ergonomique</li>
+              <li>Documentation technique</li>
+            </ul>
+          `;
+          break;
+
+        case 'mobile1':
+          title = "Application mobile de gestion de tâches collaborative";
+          content = `
+            <h6>Objectif complet :</h6>
+            <p>Développer une application mobile permettant la gestion collaborative de tâches avec synchronisation en temps réel.</p>
+
+            <h6>Technologies utilisées :</h6>
+            <ul>
+              <li>React Native</li>
+              <li>Firebase</li>
+              <li>Redux</li>
+              <li>Node.js</li>
+            </ul>
+
+            <h6>Détails supplémentaires :</h6>
+            <ul>
+              <li>Interface intuitive et responsive</li>
+              <li>Synchronisation multi-appareils</li>
+              <li>Notifications push pour les échéances</li>
+              <li>Gestion des permissions et rôles</li>
+            </ul>
+
+            <h6>Livrables attendus :</h6>
+            <ul>
+              <li>Application React Native déployée</li>
+              <li>API backend Node.js</li>
+              <li>Guide d’installation et d’utilisation</li>
+            </ul>
+          `;
+          break;
+
+        case 'mobile2':
+          title = "Application de tourisme local avec réalité augmentée";
+          content = `
+            <h6>Objectif complet :</h6>
+            <p>Créer une application mobile de découverte touristique intégrant des éléments de réalité augmentée.</p>
+
+            <h6>Technologies utilisées :</h6>
+            <ul>
+              <li>Flutter</li>
+              <li>ARKit / ARCore</li>
+              <li>Google Maps API</li>
+              <li>MongoDB</li>
+            </ul>
+
+            <h6>Détails supplémentaires :</h6>
+            <ul>
+              <li>Géolocalisation des points d'intérêt</li>
+              <li>Affichage AR d’informations contextuelles</li>
+              <li>Itinéraires personnalisés</li>
+              <li>Mode hors-ligne avec synchronisation</li>
+            </ul>
+
+            <h6>Livrables attendus :</h6>
+            <ul>
+              <li>Application Flutter (Android + iOS)</li>
+              <li>Base de données MongoDB</li>
+              <li>Documentation utilisateur</li>
+            </ul>
+          `;
+          break;
+
+        case 'security1':
+          title = "Homelab distant sécurisé pour étudiants";
+          content = `
+            <h6>Objectif complet :</h6>
+            <p>Mettre en place une infrastructure distante accessible par navigateur pour pratiquer des TP sur des machines virtuelles.</p>
+
+            <h6>Technologies utilisées :</h6>
+            <ul>
+              <li>Proxmox</li>
+              <li>Guacamole</li>
+              <li>WireGuard</li>
+              <li>Docker</li>
+            </ul>
+
+            <h6>Détails supplémentaires :</h6>
+            <ul>
+              <li>Déploiement de VMs Ubuntu & Windows</li>
+              <li>Portail sécurisé avec authentification et VPN</li>
+              <li>Scripts d’automatisation pour reset des machines</li>
+              <li>Accès partagé par groupe d’étudiants</li>
+            </ul>
+
+            <h6>Livrables attendus :</h6>
+            <ul>
+              <li>Infrastructure Proxmox + Guacamole fonctionnelle</li>
+              <li>Guide d’utilisation étudiant</li>
+              <li>Documentation de sécurité</li>
+            </ul>
+          `;
+          break;
+
+        case 'security2':
+          title = "Simulateur d'attaques réseau & détection IDS";
+          content = `
+            <h6>Objectif complet :</h6>
+            <p>Créer une plateforme d'analyse de sécurité simulant des intrusions détectées par un IDS open-source.</p>
+
+            <h6>Technologies utilisées :</h6>
+            <ul>
+              <li>Kali Linux</li>
+              <li>Suricata</li>
+              <li>Zeek</li>
+              <li>ELK Stack</li>
+            </ul>
+
+            <h6>Détails supplémentaires :</h6>
+            <ul>
+              <li>Mise en place de scénarios d'attaque</li>
+              <li>Collecte de logs en temps réel</li>
+              <li>Visualisation des alertes avec Kibana</li>
+              <li>Recommandations de protection</li>
+            </ul>
+
+            <h6>Livrables attendus :</h6>
+            <ul>
+              <li>Plateforme prête à l’emploi</li>
+              <li>Rapport sur les attaques simulées</li>
+              <li>Tableaux de bord de sécurité</li>
+            </ul>
+          `;
+          break;
+
+        case 'innovation1':
+          title = "Assistant vocal métier (support RH ou commercial)";
+          content = `
+            <h6>Objectif complet :</h6>
+            <p>Créer un assistant vocal qui répond à des questions métier courantes (recrutement, contrats, support).</p>
+
+            <h6>Technologies utilisées :</h6>
+            <ul>
+              <li>Python</li>
+              <li>Dialogflow</li>
+              <li>Flask API</li>
+              <li>Google Speech-to-Text</li>
+            </ul>
+
+            <h6>Détails supplémentaires :</h6>
+            <ul>
+              <li>Dialogue contextuel basé sur FAQ métier</li>
+              <li>Voix synthétique + reconnaissance vocale</li>
+              <li>Interface Web pour gérer les réponses</li>
+              <li>Intégration avec bases de données existantes</li>
+            </ul>
+
+            <h6>Livrables attendus :</h6>
+            <ul>
+              <li>Application fonctionnelle</li>
+              <li>Base FAQ intégrée</li>
+              <li>Documentation utilisateur et technique</li>
+            </ul>
+          `;
+          break;
+
+        case 'innovation2':
+          title = "Application d'analyse de performance scolaire";
+          content = `
+            <h6>Objectif complet :</h6>
+            <p>Créer un outil de suivi de performance pour établissements secondaires (profils étudiants, moyennes, prédictions).</p>
+
+            <h6>Technologies utilisées :</h6>
+            <ul>
+              <li>Django</li>
+              <li>SQLite</li>
+              <li>Chart.js</li>
+              <li>Pandas</li>
+            </ul>
+
+            <h6>Détails supplémentaires :</h6>
+            <ul>
+              <li>Import Excel des notes par matière/trimestre</li>
+              <li>Dashboards pour parents, enseignants, direction</li>
+              <li>Génération de bulletins et recommandations</li>
+              <li>Algorithme simple de prédiction d’échec scolaire</li>
+            </ul>
+
+            <h6>Livrables attendus :</h6>
+            <ul>
+              <li>Application Django complète</li>
+              <li>Dashboards Chart.js</li>
+              <li>Rapport pédagogique et technique</li>
+            </ul>
+          `;
+          break;
+
           
         // Ajouter d'autres cas pour les autres projets
         default:
