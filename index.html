@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets Tutorés - Licence Pro CNAM Web Mobile & BI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+      --light-bg: #f8f9fa;
+      --dark-bg: #343a40;
+      --bi-color: #ff6b00;
+      --web-color: #4d8af0;
+      --mobile-color: #27ae60;
+      --security-color: #9b59b6;
+      --innovation-color: #e67e22;
+    }
+
+    body {
+      background-color: var(--light-bg);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .navbar {
+      background-color: var(--primary-color);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: white;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      padding: 4rem 0;
+      margin-bottom: 3rem;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .card {
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .card-header {
+      color: white;
+      font-weight: 600;
+    }
+
+    .bi-card {
+      background-color: var(--bi-color);
+    }
+
+    .web-card {
+      background-color: var(--web-color);
+    }
+
+    .mobile-card {
+      background-color: var(--mobile-color);
+    }
+
+    .security-card {
+      background-color: var(--security-color);
+    }
+
+    .innovation-card {
+      background-color: var(--innovation-color);
+    }
+
+    .module-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn-primary {
+      background-color: var(--secondary-color);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #3a7bd5;
+    }
+
+    .btn-bi {
+      background-color: var(--bi-color);
+      color: white;
+    }
+
+    .btn-bi:hover {
+      background-color: #e05a00;
+      color: white;
+    }
+
+    .btn-web {
+      background-color: var(--web-color);
+      color: white;
+    }
+
+    .btn-web:hover {
+      background-color: #3a7bd5;
+      color: white;
+    }
+
+    .btn-mobile {
+      background-color: var(--mobile-color);
+      color: white;
+    }
+
+    .btn-mobile:hover {
+      background-color: #219653;
+      color: white;
+    }
+
+    .btn-security {
+      background-color: var(--security-color);
+      color: white;
+    }
+
+    .btn-security:hover {
+      background-color: #8e44ad;
+      color: white;
+    }
+
+    .btn-innovation {
+      background-color: var(--innovation-color);
+      color: white;
+    }
+
+    .btn-innovation:hover {
+      background-color: #d35400;
+      color: white;
+    }
+
+    .time-distribution {
+      background-color: white;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+
+    .process-step {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 20px;
+    }
+
+    .process-step:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      background-color: var(--secondary-color);
+      border-radius: 50%;
+    }
+
+    .process-step:after {
+      content: "";
+      position: absolute;
+      left: 9px;
+      top: 20px;
+      width: 2px;
+      height: 100%;
+      background-color: var(--secondary-color);
+    }
+
+    .process-step:last-child:after {
+      display: none;
+    }
+
+    .highlight-box {
+      background-color: rgba(77, 138, 240, 0.1);
+      border-left: 4px solid var(--secondary-color);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .bi-highlight {
+      background-color: rgba(255, 107, 0, 0.1);
+      border-left: 4px solid var(--bi-color);
+    }
+
+    .web-highlight {
+      background-color: rgba(77, 138, 240, 0.1);
+      border-left: 4px solid var(--web-color);
+    }
+
+    .mobile-highlight {
+      background-color: rgba(39, 174, 96, 0.1);
+      border-left: 4px solid var(--mobile-color);
+    }
+
+    .security-highlight {
+      background-color: rgba(155, 89, 182, 0.1);
+      border-left: 4px solid var(--security-color);
+    }
+
+    .innovation-highlight {
+      background-color: rgba(230, 126, 34, 0.1);
+      border-left: 4px solid var(--innovation-color);
+    }
+
+    .linked-modules {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .linked-module {
+      background-color: var(--light-bg);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: var(--primary-color);
+      border: 1px solid #ddd;
+    }
+
+    .tab-content {
+      padding: 1.5rem 0;
+    }
+
+    footer {
+      background-color: var(--dark-bg);
+      color: white;
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+
+    /* Animation pour les cartes */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .module-card {
+      animation: fadeIn 0.5s ease forwards;
+      opacity: 0;
+    }
+
+    /* Délai d'animation pour chaque carte */
+    .module-card:nth-child(1) { animation-delay: 0.1s; }
+    .module-card:nth-child(2) { animation-delay: 0.2s; }
+    .module-card:nth-child(3) { animation-delay: 0.3s; }
+    .module-card:nth-child(4) { animation-delay: 0.4s; }
+    .module-card:nth-child(5) { animation-delay: 0.5s; }
+    .module-card:nth-child(6) { animation-delay: 0.6s; }
+    .module-card:nth-child(7) { animation-delay: 0.7s; }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 2rem 0;
+      }
+
+      .module-icon {
+        font-size: 1.5rem;
+      }
+    }
+
+    .tech-badge {
+      font-size: 0.7rem;
+      margin-right: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="bi bi-kanban me-2"></i>Projets Tutorés - LP CNAM
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#presentation">Présentation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#repartition">Répartition</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#bi">Business Intelligence</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#web">Développement Web</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#mobile">Mobile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#securite">Sécurité</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#innovation">Innovation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#ressources">Ressources</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero-section">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold mb-3">Projets Tutorés - 120h</h1>
+      <p class="lead mb-4">Licence Professionnelle CNAM Web Mobile et Business Intelligence</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="#presentation" class="btn btn-light btn-lg px-4">Découvrir les projets</a>
+        <a href="#repartition" class="btn btn-outline-light btn-lg px-4">Voir la répartition</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container mb-5">
+    <section id="presentation" class="mb-5">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="mb-4">Projets Tutorés - 120 heures</h2>
+          <p class="lead">Les projets tutorés constituent un élément essentiel de la formation, permettant aux étudiants de mettre en pratique les compétences acquises dans un contexte professionnel, en collaboration avec des entreprises ou sur des cas réels.</p>
+          <div class="d-flex justify-content-center mt-4">
+            <div class="px-4 text-center">
+              <i class="bi bi-lightning-charge fs-1 text-primary"></i>
+              <p class="mt-2 fw-bold">Pratique</p>
+            </div>
+            <div class="px-4 text-center">
+              <i class="bi bi-people fs-1 text-primary"></i>
+              <p class="mt-2 fw-bold">Collaboration</p>
+            </div>
+            <div class="px-4 text-center">
+              <i class="bi bi-briefcase fs-1 text-primary"></i>
+              <p class="mt-2 fw-bold">Professionnalisation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="repartition" class="mb-5">
+      <h2 class="text-center mb-4">Répartition indicative des 120h</h2>
+      
+      <div class="time-distribution">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-header d-flex align-items-center">
+                <i class="bi bi-list-check me-2"></i>
+                <h5 class="mb-0">Répartition par phase</h5>
+              </div>
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Étude préalable, cadrage fonctionnel & technique
+                    <span class="badge bg-primary rounded-pill">20h</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Conception technique & modélisation
+                    <span class="badge bg-primary rounded-pill">20h</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Développement & intégration
+                    <span class="badge bg-primary rounded-pill">50h</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Tests, documentation, corrections
+                    <span class="badge bg-primary rounded-pill">15h</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Préparation soutenance, rapport, démo
+                    <span class="badge bg-primary rounded-pill">15h</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-header d-flex align-items-center">
+                <i class="bi bi-pie-chart me-2"></i>
+                <h5 class="mb-0">Répartition graphique</h5>
+              </div>
+              <div class="card-body">
+                <canvas id="timeDistributionChart" height="250"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="bi" class="mb-5">
+      <h2 class="text-center mb-4">Business Intelligence & Data Mining</h2>
+      
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <div class="card h-100 module-card">
+            <div class="card-header d-flex align-items-center bi-card">
+              <i class="bi bi-bar-chart me-2"></i>
+              <h5 class="mb-0">Tableau de bord décisionnel RH</h5>
+            </div>
+            <div class="card-body">
+              <h6>Objectif :</h6>
+              <p>Mettre en place un tableau de bord RH intégrant l'absentéisme, la masse salariale, les départs, recrutements, etc.</p>
+              
+              <h6>Technologies :</h6>
+              <div class="linked-modules">
+                <span class="linked-module">Power BI</span>
+                <span class="linked-module">Metabase</span>
+                <span class="linked-module">PostgreSQL</span>
+                <span class="linked-module">Talend</span>
+                <span class="linked-module">Apache Nifi</span>
+              </div>
+              
+              <div class="bi-highlight highlight-box mt-3">
+                <p><strong>Détails supplémentaires :</strong></p>
+                <ul>
+                  <li>Étude des indicateurs RH clés et définition des KPIs</li>
+                  <li>Réalisation d'un schéma étoile ou en flocon</li>
+                  <li>Connecteurs vers CSV, API, ERP fictif</li>
+                  <li>Création de tableaux de bord dynamiques</li>
+                </ul>
+              </div>
+              <button class="btn btn-bi btn-sm mt-3" onclick="showProjectDetails('bi1')">
+                <i class="bi bi-info-circle me-1"></i>Voir les détails complets
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="card h-100 module-card">
+            <div class="card-header d-flex align-items-center bi-card">
+              <i class="bi bi-graph-up me-2"></i>
+              <h5 class="mb-0">Data Mining prédictif de l'attrition client</h5>
+            </div>
+            <div class="card-body">
+              <h6>Objectif :</h6>
+              <p>Créer un modèle de scoring pour prédire la perte de clients d'une entreprise de services.</p>
+              
+              <h6>Technologies :</h6>
+              <div class="linked-modules">
+                <span class="linked-module">Python</span>
+                <span class="linked-module">Scikit-learn</span>
+                <span class="linked-module">Jupyter</span>
+                <span class="linked-module">Pandas</span>
+                <span class="linked-module">Streamlit</span>
+              </div>
+              
+              <div class="bi-highlight highlight-box mt-3">
+                <p><strong>Détails supplémentaires :</strong></p>
+                <ul>
+                  <li>Jeu de données synthétique à nettoyer et enrichir</li>
+                  <li>Exploration de variables explicatives et analyse corrélative</li>
+                  <li>Utilisation de plusieurs modèles prédictifs</li>
+                  <li>Mesure de performance et visualisation des résultats</li>
+                </ul>
+              </div>
+              <button class="btn btn-bi btn-sm mt-3" onclick="showProjectDetails('bi2')">
+                <i class="bi bi-info-circle me-1"></i>Voir les détails complets
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="web" class="mb-5">
+      <h2 class="text-center mb-4">Développement Web</h2>
+      
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <div class="card h-100 module-card">
+            <div class="card-header d-flex align-items-center web-card">
+              <i class="bi bi-calendar-event me-2"></i>
+              <h5 class="mb-0">Application de gestion d'événements sportifs</h5>
+            </div>
+            <div class="card-body">
+              <h6>Objectif :</h6>
+              <p>Plateforme web et mobile pour inscrire des équipes, gérer les matchs, scores, et classements.</p>
+              
+              <h6>Technologies :</h6>
+              <div class="linked-modules">
+                <span class="linked-module">Flutter</span>
+                <span class="linked-module">Firebase</span>
+                <span class="linked-module">Node.js</span>
+                <span class="linked-module">MongoDB</span>
+              </div>
+              
+              <div class="web-highlight highlight-box mt-3">
+                <p><strong>Détails supplémentaires :</strong></p>
+                <ul>
+                  <li>Authentification par rôle : admin, organisateur, participant</li>
+                  <li>Interface mobile-first et responsive</li>
+                  <li>Génération dynamique de tournois</li>
+                  <li>Export CSV des résultats et dashboard admin</li>
+                </ul>
+              </div>
+              <button class="btn btn-web btn-sm mt-3" onclick="showProjectDetails('web1')">
+                <i class="bi bi-info-circle me-1"></i>Voir les détails complets
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="card h-100 module-card">
+            <div class="card-header d-flex align-items-center web-card">
+              <i class="bi bi-briefcase me-2"></i>
+              <h5 class="mb-0">Plateforme d'offres d'emploi pour freelances</h5>
+            </div>
+            <div class="card-body">
+              <h6>Objectif :</h6>
+              <p>Développement d'un site où freelances peuvent créer un profil, postuler et suivre les missions.</p>
+              
+              <h6>Technologies :</h6>
+              <div class="linked-modules">
+                <span class="linked-module">Vue.js</span>
+                <span class="linked-module">Express.js</span>
+                <span class="linked-module">MySQL</span>
+                <span class="linked-module">REST API</span>
+              </div>
+              
+              <div class="web-highlight highlight-box mt-3">
+                <p><strong>Détails supplémentaires :</strong></p>
+                <ul>
+                  <li>Création de profils, CV PDF dynamiques</li>
+                  <li>Gestion de matching entre profils et offres</li>
+                  <li>Tableau de bord de suivi de candidature</li>
+                  <li>Chat simple entre recruteur et freelance</li>
+                </ul>
+              </div>
+              <button class="btn btn-web btn-sm mt-3" onclick="showProjectDetails('web2')">
+                <i class="bi bi-info-circle me-1"></i>Voir les détails complets
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mobile" class="mb-5">
+      <h2 class="text-center mb-4">Développement Mobile</h2>
+      
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <div class="card h-100 module-card">
+            <div class="card-header d-flex align-items-center mobile-card">
+              <i class="bi bi-phone me-2"></i>
+              <h5 class="mb-0">Application mobile de gestion de tâches collaborative</h5>
+            </div>
+            <div class="card-body">
+              <h6>Objectif :</h6>
+              <p>Développer une application mobile permettant la gestion collaborative de tâches avec synchronisation en temps réel.</p>
+              
+              <h6>Technologies :</h6>
+              <div class="linked-modules">
+                <span class="linked-module">React Native</span>
+                <span class="linked-module">Firebase</span>
+                <span class="linked-module">Redux</span>
+                <span class="linked-module">Node.js</span>
+              </div>
+              
+              <div class="mobile-highlight highlight-box mt-3">
+                <p><strong>Détails supplémentaires :</strong></p>
+                <ul>
+                  <li>Interface intuitive et responsive</li>
+                  <li>Synchronisation multi-appareils</li>
+                  <li>Notifications push pour les échéances</li>
+                  <li>Gestion des permissions et rôles</li>
+                </ul>
+              </div>
+              <button class="btn btn-mobile btn-sm mt-3" onclick="showProjectDetails('mobile1')">
+                <i class="bi bi-info-circle me-1"></i>Voir les détails complets
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="card h-100 module-card">
+            <div class="card-header d-flex align-items-center mobile-card">
+              <i class="bi bi-geo-alt me-2"></i>
+              <h5 class="mb-0">Application de tourisme local avec réalité augmentée</h5>
+            </div>
+            <div class="card-body">
+              <h6>Objectif :</h6>
+              <p>Créer une application mobile de découverte touristique intégrant des éléments de réalité augmentée.</p>
+              
+              <h6>Technologies :</h6>
+              <div class="linked-modules">
+                <span class="linked-module">Flutter</span>
+                <span class="linked-module">ARKit/ARCore</span>
+                <span class="linked-module">Google Maps API</span>
+                <span class="linked-module">MongoDB</span>
+              </div>
+              
+              <div class="mobile-highlight highlight-box mt-3">
+                <p><strong>Détails supplémentaires :</strong></p>
+                <ul>
+                  <li>Géolocalisation des points d'intérêt</li>
+                  <li>Affichage d'informations en réalité augmentée</li>
+                  <li>Itinéraires personnalisés</li>
+                  <li>Mode hors-ligne avec synchronisation</li>
+                </ul>
+              </div>
+              <button class="btn btn-mobile btn-sm mt-3" onclick="showProjectDetails('mobile2')">
+                <i class="bi bi-info-circle me-1"></i>Voir les détails complets
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="securite" class="mb-5">
+      <h2 class="text-center mb-4">Administration Systèmes & Sécurité</h2>
+      
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <div class="card h-100 module-card">
+            <div class="card-header d-flex align-items-center security-card">
+              <i class="bi bi-hdd-rack me-2"></i>
+              <h5 class="mb-0">Homelab distant sécurisé pour étudiants</h5>
+            </div>
+            <div class="card-body">
+              <h6>Objectif :</h6>
+              <p>Mettre en place une infrastructure distante accessible par navigateur pour pratiquer des TP sur des machines virtuelles.</p>
+              
+              <h6>Technologies :</h6>
+              <div class="linked-modules">
+                <span class="linked-module">Proxmox</span>
+                <span class="linked-module">Guacamole</span>
+                <span class="linked-module">WireGuard</span>
+                <span class="linked-module">Docker</span>
+              </div>
+              
+              <div class="security-highlight highlight-box mt-3">
+                <p><strong>Détails supplémentaires :</strong></p>
+                <ul>
+                  <li>Déploiement de VMs Ubuntu & Windows</li>
+                  <li>Portail sécurisé avec authentification + VPN</li>
+                  <li>Scripts d'automatisation de déploiement et reset</li>
+                  <li>Accès partagé par groupe (binômes)</li>
+                </ul>
+              </div>
+              <button class="btn btn-security btn-sm mt-3" onclick="showProjectDetails('security1')">
+                <i class="bi bi-info-circle me-1"></i>Voir les détails complets
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="card h-100 module-card">
+            <div class="card-header d-flex align-items-center security-card">
+              <i class="bi bi-shield-check me-2"></i>
+              <h5 class="mb-0">Simulateur d'attaques réseau & détection IDS</h5>
+            </div>
+            <div class="card-body">
+              <h6>Objectif :</h6>
+              <p>Créer une plateforme d'analyse de sécurité simulant des intrusions détectées par un IDS open-source.</p>
+              
+              <h6>Technologies :</h6>
+              <div class="linked-modules">
+                <span class="linked-module">Kali Linux</span>
+                <span class="linked-module">Suricata</span>
+                <span class="linked-module">Zeek</span>
+                <span class="linked-module">ELK Stack</span>
+              </div>
+              
+              <div class="security-highlight highlight-box mt-3">
+                <p><strong>Détails supplémentaires :</strong></p>
+                <ul>
+                  <li>Mise en place de scénarios d'attaque</li>
+                  <li>Collecte des logs en temps réel</li>
+                  <li>Visualisation avec Kibana</li>
+                  <li>Recommandations de protection</li>
+                </ul>
+              </div>
+              <button class="btn btn-security btn-sm mt-3" onclick="showProjectDetails('security2')">
+                <i class="bi bi-info-circle me-1"></i>Voir les détails complets
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="innovation" class="mb-5">
+      <h2 class="text-center mb-4">Projets Innovants & Transverses</h2>
+      
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <div class="card h-100 module-card">
+            <div class="card-header d-flex align-items-center innovation-card">
+              <i class="bi bi-mic me-2"></i>
+              <h5 class="mb-0">Assistant vocal métier (support RH ou commercial)</h5>
+            </div>
+            <div class="card-body">
+              <h6>Objectif :</h6>
+              <p>Créer un assistant vocal qui répond à des questions métier courantes (recrutement, contrats, support).</p>
+              
+              <h6>Technologies :</h6>
+              <div class="linked-modules">
+                <span class="linked-module">Python</span>
+                <span class="linked-module">Dialogflow</span>
+                <span class="linked-module">Flask API</span>
+                <span class="linked-module">Google Speech-to-Text</span>
+              </div>
+              
+              <div class="innovation-highlight highlight-box mt-3">
+                <p><strong>Détails supplémentaires :</strong></p>
+                <ul>
+                  <li>Dialogue contextuel basé sur FAQ métier</li>
+                  <li>Voix synthétique + reconnaissance vocale</li>
+                  <li>Interface Web de gestion des questions/réponses</li>
+                  <li>Intégration avec bases de données existantes</li>
+                </ul>
+              </div>
+              <button class="btn btn-innovation btn-sm mt-3" onclick="showProjectDetails('innovation1')">
+                <i class="bi bi-info-circle me-1"></i>Voir les détails complets
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="card h-100 module-card">
+            <div class="card-header d-flex align-items-center innovation-card">
+              <i class="bi bi-journal-bookmark me-2"></i>
+              <h5 class="mb-0">Application d'analyse de performance scolaire</h5>
+            </div>
+            <div class="card-body">
+              <h6>Objectif :</h6>
+              <p>Créer un outil de suivi de performance pour établissements secondaires (profils étudiants, moyennes, prédictions).</p>
+              
+              <h6>Technologies :</h6>
+              <div class="linked-modules">
+                <span class="linked-module">Django</span>
+                <span class="linked-module">SQLite</span>
+                <span class="linked-module">Chart.js</span>
+                <span class="linked-module">Pandas</span>
+              </div>
+              
+              <div class="innovation-highlight highlight-box mt-3">
+                <p><strong>Détails supplémentaires :</strong></p>
+                <ul>
+                  <li>Import Excel des notes par matière/trimestre</li>
+                  <li>Dashboards pour parents, enseignants, direction</li>
+                  <li>Génération de bulletins et recommandations</li>
+                  <li>Algorithme simple de prédiction d'échec</li>
+                </ul>
+              </div>
+              <button class="btn btn-innovation btn-sm mt-3" onclick="showProjectDetails('innovation2')">
+                <i class="bi bi-info-circle me-1"></i>Voir les détails complets
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ressources" class="mb-5">
+      <h2 class="text-center mb-4">Ressources supplémentaires</h2>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card mb-4">
+            <div class="card-header">
+              <h5 class="mb-0">Outils recommandés</h5>
+            </div>
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Git / GitHub
+                  <span class="badge bg-primary tech-badge">Versionning</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Visual Studio Code
+                  <span class="badge bg-primary tech-badge">Édition</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Figma
+                  <span class="badge bg-primary tech-badge">Design</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Postman
+                  <span class="badge bg-primary tech-badge">API</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  Docker
+                  <span class="badge bg-primary tech-badge">Conteneurisation</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="card mb-4">
+            <div class="card-header">
+              <h5 class="mb-0">Documentation utile</h5>
+            </div>
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Guide de rédaction de rapport de projet</li>
+                <li class="list-group-item">Modèle de cahier des charges</li>
+                <li class="list-group-item">Normes de documentation technique</li>
+                <li class="list-group-item">Guide de préparation de soutenance</li>
+                <li class="list-group-item">Checklist de livraison de projet</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">Calendrier et échéances</h5>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <h6>Phase 1 - Cadrage</h6>
+              <ul>
+                <li>Choix du sujet: Semaine 1</li>
+                <li>Cahier des charges: Semaine 3</li>
+                <li>Planification: Semaine 4 <li>Conception: Semaine 5-6</li>
+                <li>Développement: Semaine 7-10</li>
+                <li>Tests initiaux: Semaine 11</li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h6>Phase 3 - Finalisation</h6>
+              <ul>
+                <li>Tests finaux: Semaine 12</li>
+                <li>Rédaction rapport: Semaine 13</li>
+                <li>Soutenance: Semaine 14</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5>Licence Professionnelle</h5>
+          <p>CNAM Web Mobile et Business Intelligence</p>
+          <p>Projets Tutorés - 120h</p>
+        </div>
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5>Contact</h5>
+          <p><i class="bi bi-envelope me-2"></i> contact@licence-cnam.fr</p>
+          <p><i class="bi bi-geo-alt me-2"></i> CNAM Paris</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Ressources</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Documentation</a></li>
+            <li><a href="#" class="text-white">Modèles de documents</a></li>
+            <li><a href="#" class="text-white">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="my-4 bg-light">
+      <div class="text-center">
+        <p class="mb-0">&copy; 2023 Licence Professionnelle CNAM Web Mobile et BI - Tous droits réservés</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal pour les détails des projets -->
+  <div class="modal fade" id="projectModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="projectModalTitle">Détails du projet</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="projectModalBody">
+          <!-- Contenu chargé dynamiquement -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Données pour le graphique de répartition
+    const timeDistributionData = {
+      labels: ['Étude préalable', 'Conception', 'Développement', 'Tests & Documentation', 'Soutenance'],
+      datasets: [{
+        data: [20, 20, 50, 15, 15],
+        backgroundColor: [
+          '#3498db',
+          '#2ecc71',
+          '#9b59b6',
+          '#e67e22',
+          '#e74c3c'
+        ],
+        borderWidth: 1
+      }]
+    };
+
+    // Configuration du graphique
+    const config = {
+      type: 'pie',
+      data: timeDistributionData,
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom',
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return context.label + ': ' + context.raw + 'h';
+              }
+            }
+          }
+        }
+      }
+    };
+
+    // Initialisation du graphique
+    window.onload = function() {
+      const ctx = document.getElementById('timeDistributionChart').getContext('2d');
+      new Chart(ctx, config);
+    };
+
+    // Fonction pour afficher les détails des projets
+    function showProjectDetails(projectId) {
+      const modalTitle = document.getElementById('projectModalTitle');
+      const modalBody = document.getElementById('projectModalBody');
+      
+      // Contenu différent selon le projet
+      let title = '';
+      let content = '';
+      
+      switch(projectId) {
+        case 'bi1':
+          title = 'Tableau de bord décisionnel RH';
+          content = `
+            <h6>Objectif complet :</h6>
+            <p>Mettre en place un tableau de bord RH intégrant l'absentéisme, la masse salariale, les départs, recrutements, etc.</p>
+            
+            <h6>Technologies utilisées :</h6>
+            <ul>
+              <li>Power BI / Metabase</li>
+              <li>PostgreSQL</li>
+              <li>ETL Talend ou Apache Nifi</li>
+            </ul>
+            
+            <h6>Détails supplémentaires :</h6>
+            <ul>
+              <li>Étude des indicateurs RH clés et définition des KPIs avec un expert RH</li>
+              <li>Réalisation d'un schéma étoile ou en flocon</li>
+              <li>Connecteurs vers CSV, API, ERP fictif</li>
+              <li>Création de 3 tableaux de bord dynamiques (par période, par service, par salarié)</li>
+              <li>Génération de rapports PDF automatisés</li>
+            </ul>
+            
+            <h6>Livrables attendus :</h6>
+            <ul>
+              <li>MCD (Modèle Conceptuel de Données)</li>
+              <li>Script BDD</li>
+              <li>Rapport d'analyse</li>
+              <li>Dashboards interactifs</li>
+              <li>Manuel utilisateur</li>
+            </ul>
+          `;
+          break;
+          
+        case 'bi2':
+          title = 'Data Mining prédictif de l\'attrition client';
+          content = `
+            <h6>Objectif complet :</h6>
+            <p>Créer un modèle de scoring pour prédire la perte de clients d'une entreprise de services.</p>
+            
+            <h6>Technologies utilisées :</h6>
+            <ul>
+              <li>Python</li>
+              <li>Scikit-learn</li>
+              <li>Jupyter</li>
+              <li>Pandas</li>
+            </ul>
+            
+            <h6>Détails supplémentaires :</h6>
+            <ul>
+              <li>Jeu de données synthétique à nettoyer et enrichir</li>
+              <li>Exploration de variables explicatives et analyse corrélative</li>
+              <li>Utilisation de plusieurs modèles (régression logistique, arbres, KNN...)</li>
+              <li>Mesure de performance (accuracy, F1-score, confusion matrix)</li>
+              <li>Visualisation des résultats avec Dash ou Streamlit</li>
+            </ul>
+            
+            <h6>Livrables attendus :</h6>
+            <ul>
+              <li>Notebook Jupyter complet avec l'analyse</li>
+              <li>Modèle de prédiction entraîné</li>
+              <li>Dashboard de visualisation</li>
+              <li>Rapport technique détaillant la démarche</li>
+            </ul>
+          `;
+          break;
+          
+        // Ajouter d'autres cas pour les autres projets
+        default:
+          title = 'Détails du projet';
+          content = '<p>Informations détaillées non disponibles pour ce projet.</p>';
+      }
+      
+      modalTitle.textContent = title;
+      modalBody.innerHTML = content;
+      
+      // Afficher la modal
+      const projectModal = new bootstrap.Modal(document.getElementById('projectModal'));
+      projectModal.show();
+    }
+  </script>
+</body>
+</html>
